@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>details</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        
+        tr th{
+            text-align: center;
+        }
+
+        tr td{
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <center>
+    <h3 style="color: darkcyan;">Parent Child  Details</h3>
+     <table class="table table-striped table-bordered table-hover"> 
+
+            <tr style="color: darkblue;">
+                <th>Parent</th>
+                <th>Child</th>
+                <th>Action</th>
+            </tr>
+            
+            {% for rec in data %}
+            <tr>
+                    <td>{{rec.parent}}</td>
+                    <td>{{rec.child}}</td>
+                    <td><a href="data/{{rec.id}}">details</a></td>
+            </tr>        
+            {% endfor %}
+            
+        </table>
+    </center>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>childshow</title>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>{{title}}</title>
+    <style>
+        td:hover{
+            background-color: aqua;
+        }
+        tr th{
+            text-align: center;
+        }
+
+        tr td{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body bgcolor='cyan'>
+    <h1 style="text-align:center; color: blueviolet;">CHILDREN RECORDS</h1>
+    
+    <table class="table table-striped table-bordered table-hover">
+
+
+    <tr style='color:red;' >
+    <th>REGNO</th>    
+    <th>ORGNAME</th>     
+    <th>NAME</th>
+    <th>GENDER</th>
+    <th>DATEOFBIRTH</th>
+    <th>FATHERNAME</th>
+    <th>MOTHERNAME</th>
+    <th>ADDRESS</th>
+    {% if request.user.is_superuser %} 
+
+    <th>ACTION</th>
+    {% endif %}
+</tr>
+{% for recd in data %}
+<tr>
+<td>{{recd.regno}}</td>
+<td>{{recd.orgname}}</td>
+<td>{{recd.name}}</td>
+<td>{{recd.gender}}</td>
+<td>{{recd.dateofbirth}}</td>
+<td>{{recd.fathername}}</td>
+<td>{{recd.mothername}}</td>
+<td>{{recd.address}}</td>
+{% if request.user.is_superuser %}
+
+<td>
+    <a href="childedit/{{recd.id}}">EDIT</a>|
+    <a href="childdelete/{{recd.id}}">DELETE</a>|
+    <a href="details/{{recd.id}}">DETAILS</a>
+</td>
+</tr>
+{% endif %}
+
+{% endfor %} 
+</table>
+</body>
+</html>
