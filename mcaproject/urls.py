@@ -23,6 +23,7 @@ urlpatterns = [
     path("about",views.ABOUT),
     path("links",views.links),
     path("donate",views.donate),
+    path("pay",views.pay),
     
 
 
@@ -46,6 +47,8 @@ urlpatterns = [
     path('childdelete/<int:id>',views.childdelete),
 
     path('login',views.signin,name='login'),
+    path('login1',views.loggin1),
+    path('parentlogin',views.parentlogin),
     path('loggin',views.loggin,),
     path('logout',views.loggout),
     path('mapdetails',views.abcd),

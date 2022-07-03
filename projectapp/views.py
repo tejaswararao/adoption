@@ -19,6 +19,9 @@ def links(request):
 def donate(request):
     return render(request,'donate.html')
 
+def pay(request):
+    return render(request,'pay.html')
+
 # ................................................................................................................
 def parent(request):
     return render(request,'parent.html')
@@ -171,6 +174,13 @@ def childdelete(request,id):
 
 def signin(request):
     return render(request,'login.html')
+
+
+def loggin1(request):
+    return render(request,'login1.html')
+
+def parentlogin(request):
+    return render(request,'parent login.html')
 
 
 def loggin(request):

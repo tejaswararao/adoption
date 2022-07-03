@@ -6,10 +6,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<style>
+  body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1513790766000-40309e3ced42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg");
 
-  {%include "links.html"%}
+  /* Full height */
+  height: 100%;
 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body>  
+    {% load static %} 
+    <div class="bg"> 
+      <h1 style="text-align: center; color: white;" >About us</h1>
+      <p style="color:white; font-size:20px;font-family:'Times New Roman', Times, serif;text-align: justify;margin-left: 30px; margin-right: 30px;">
+        This application acts as an interface between Individuals and realtors. 
+        Here the user can advertise his property for buying or for selling. 
+        Site provides online real estate and related services to customers 
+        to make eye catching and full profit decisions related to buying, selling, 
+        renting and leasing of properties, in India. We will provide a fresh new approach to our 
+        esteemed users to search for
+        properties to buy or rent, and list their properties for selling or
+        leasing. Property promises to be the most preferred way of finding
+        your dream property and we are committed to help you make a wiser
+        property decision, as a buyer or a seller. We give our customers ease
+        to use and also, we will maintain a good relationship with the
+        customers, sellers for properties. Our Site Mainly deals with farm
+        land property.This application has been developed with the core
+        objective of addressing and to fulfill Real Estate Business needs. This
+        application involves in showcase farm land properties, option to
+        enquire site visit, providing options for sale or rent the farm lands.
+      </p>
+    </div>
 </body>
 </html>
