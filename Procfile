@@ -1,1 +1,1 @@
-web: gunicorn mcaproject.wsgi:application --log-file - --log-level debug
+web: gunicorn mcaproject.wsgi --log-file -
