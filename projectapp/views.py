@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate,login,logout
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 
+from asyncio.windows_events import NULL
+
 # Create your views here.
 def home(request):
     return render(request,'home.html')
