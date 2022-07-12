@@ -1,1 +1,1 @@
-web: gunicorn mcaproject.wsgi
+ web: gunicorn mcaproject.wsgi --log-file - –
