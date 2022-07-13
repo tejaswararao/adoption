@@ -8,6 +8,9 @@
 
     <title>{{title}}</title>
     <style>
+        body{
+            background-color: lightslategray;
+        }
         td:hover{
             background-color: aqua;
         }
@@ -18,50 +21,54 @@
         tr td{
             text-align: center;
         }
+        a{
+            color: whitesmoke;
+            
+        }
 
     </style>
 </head>
 <body bgcolor='cyan'>
-    <h1 style="text-align:center; color: blueviolet;">CHILDREN RECORDS</h1>
-    
-    <table class="table table-striped table-bordered table-hover">
+    <h1 style="text-align:center; color: pink;">CHILDREN RECORDS</h1>
+    <center>
+    <table class="table table-bordered" style="width: 90%;">
+        <tr style='color:red;' >
+        <th>REGNO</th>    
+        <th>ORGNAME</th>     
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>DATEOFBIRTH</th>
+        <th>FATHERNAME</th>
+        <th>MOTHERNAME</th>
+        <th>ADDRESS</th>
 
+        {% if request.user.is_superuser %} 
+        <th>ACTION</th>
+        {% endif %}
 
-    <tr style='color:red;' >
-    <th>REGNO</th>    
-    <th>ORGNAME</th>     
-    <th>NAME</th>
-    <th>GENDER</th>
-    <th>DATEOFBIRTH</th>
-    <th>FATHERNAME</th>
-    <th>MOTHERNAME</th>
-    <th>ADDRESS</th>
-    {% if request.user.is_superuser %} 
+    </tr>
+    {% for recd in data %}
+    <tr>
+    <td>{{recd.regno}}</td>
+    <td>{{recd.orgname}}</td>
+    <td>{{recd.name}}</td>
+    <td>{{recd.gender}}</td>
+    <td>{{recd.dateofbirth}}</td>
+    <td>{{recd.fathername}}</td>
+    <td>{{recd.mothername}}</td>
+    <td>{{recd.address}}</td>
+    {% if request.user.is_superuser %}
 
-    <th>ACTION</th>
+    <td>
+        <a href="childedit/{{recd.id}}">EDIT</a>|
+        <a href="childdelete/{{recd.id}}">DELETE</a>|
+        <a href="details/{{recd.id}}">DETAILS</a>
+    </td>
+    </tr>
     {% endif %}
-</tr>
-{% for recd in data %}
-<tr>
-<td>{{recd.regno}}</td>
-<td>{{recd.orgname}}</td>
-<td>{{recd.name}}</td>
-<td>{{recd.gender}}</td>
-<td>{{recd.dateofbirth}}</td>
-<td>{{recd.fathername}}</td>
-<td>{{recd.mothername}}</td>
-<td>{{recd.address}}</td>
-{% if request.user.is_superuser %}
 
-<td>
-    <a href="childedit/{{recd.id}}">EDIT</a>|
-    <a href="childdelete/{{recd.id}}">DELETE</a>|
-    <a href="details/{{recd.id}}">DETAILS</a>
-</td>
-</tr>
-{% endif %}
-
-{% endfor %} 
-</table>
+    {% endfor %} 
+    </table>
+    </center>
 </body>
 </html>
