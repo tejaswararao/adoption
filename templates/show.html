@@ -31,7 +31,9 @@
 <body>
 
     <h1 style="text-align:center; color: pink" >PARENT RECORDS</h1>
-    <table class="table table-bordered "> 
+    <center>
+    <table class="table table-bordered" style="width: 95%;">
+        <a href="home" > <h3>Home</h3></a>
         <tr style='color:red'; >
             
             <th>NAME</th>
@@ -54,7 +56,7 @@
         {% for rec in data %}
 
         <tr style='color:white';>
-            <td>{{rec.name}}</td>
+            <td>{{rec.name}}</td> 
             <td>{{rec.gender}}</td>
             <td>{{rec.nationality}}</td>
             <td>{{rec.dateofbirth}}</td>
@@ -77,6 +79,7 @@
 
 
         {% endfor %} 
+    </center>
     </table>
 </body>
 </html>

@@ -39,5 +39,5 @@ class details(models.Model):
    child =models.ForeignKey(child, on_delete=models.CASCADE)
    parent=models.ForeignKey(parent, on_delete=models.CASCADE)
    
-   '''def __str__(self):
-        return self.child.name + "__"+self.parent.name'''
+   def __str__(self):
+        return self.child.name + "__"+self.parent.name
