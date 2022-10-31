@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render,HttpResponse ,redirect
 from .import models
 from django.contrib.auth import authenticate,login,logout
-import razorpay
-from django.views.decorators.csrf import csrf_exempt
+# import razorpay
+# from django.views.decorators.csrf import csrf_exempt
 
 # from asyncio.windows_events import NULL
 
